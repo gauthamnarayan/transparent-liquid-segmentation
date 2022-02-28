@@ -1,1 +1,1 @@
-# transparent_liquid_segmentation_icra2022
+# Self-supervised Transparent Liquid Segmentation for Robotic Pouring - ICRA 2022
