@@ -87,7 +87,6 @@ def get_height_from_mask(mask):
     x2 = box[:, 1].max()
     y1 = box[:, 0].min()
     y2 = box[:, 0].max()
-    print(x1, x2, y1, y2)
 
     height = abs(y1 - y2)
     return height
@@ -169,13 +168,14 @@ def test_model(test_dir, modelFileDir, args):
     print("Number of files: ", number_of_files)
 
     cup_mask = cv2.imread(os.path.join(test_dir, "empty_cup_0_glass.png"), cv2.IMREAD_GRAYSCALE)
+    cup_height = get_height_from_mask(cup_mask)
+
     iou_sum = 0
     img_counter = 0
     for i in range(number_of_files):
         start = time.time()
         print("Frame ID: ", i)
         rgbImage = cv2.imread(os.path.join(test_dir, files[i]))
-        print(os.path.join(test_dir, files[i]))
         rgbImage = cv2.resize(rgbImage, (150, 300))
         tempRGBImage = copy.deepcopy(rgbImage)
 
@@ -190,17 +190,23 @@ def test_model(test_dir, modelFileDir, args):
         maskThresholded[maskPred > 0.5] = 255
         maskThresholded = maskThresholded.astype(np.uint8)
         # maskThresholded = cv2.cvtColor(maskThresholded, cv2.BGR2)
-
+        
         GTMask_dirname = files[i].split(".")[0] + "_json"
-        print(os.path.join(test_dir, GTMask_dirname, "label.png"))
         GTMask = cv2.imread(os.path.join(test_dir, GTMask_dirname, "label.png"), cv2.IMREAD_GRAYSCALE)
         GTMask[GTMask>0] = 255
 
         iou = calcIOU(maskThresholded, GTMask)
-        print(i)
-        print("IoU: ", iou)
+        print("IoU: {:.2f}".format(iou))
+        
         iou_sum +=  iou
         img_counter += 1
+
+        water_column_height = get_height_from_mask(maskThresholded)
+        water_column_height_gt = get_height_from_mask(GTMask)
+        
+        print("Predicted height of water column: {:.2f} %".format(water_column_height/cup_height))
+        print("Ground truth height of water column: {:.2f} %".format(water_column_height_gt/cup_height))
+        print("\n")
         
         stacked_img = np.hstack([rgbImage, 
                                  cv2.cvtColor(maskThresholded, cv2.COLOR_GRAY2BGR), 
