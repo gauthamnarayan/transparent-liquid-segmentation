@@ -27,7 +27,7 @@ pip install -e .
 cp 16.pth transparent-liquid-segmentation/Segment_Transparent_Objects/demo
 ```
 
-Additional instructions can be found at contrastive-unpaired-translation[link] and Segment_Transparent_Objects[link]
+Additional instructions can be found at [contrastive-unpaired-translation](https://github.com/taesungp/contrastive-unpaired-translation) and [Segment_Transparent_Objects](https://github.com/xieenze/Segment_Transparent_Objects)
 
 ## Dataset Generation
 
