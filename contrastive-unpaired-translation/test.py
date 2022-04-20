@@ -34,6 +34,8 @@ from util.visualizer import save_images
 from util import html
 import util.util as util
 
+import cv2
+import ntpath
 
 if __name__ == '__main__':
     opt = TestOptions().parse()  # get test options
@@ -58,14 +60,22 @@ if __name__ == '__main__':
             model.parallelize()
             if opt.eval:
                 model.eval()
-        if i >= opt.num_test:  # only apply our model to opt.num_test images.
-            break
+        # if i >= opt.num_test:  # only apply our model to opt.num_test images.
+        #     break
         model.set_input(data)  # unpack data from data loader
         model.test()           # run inference
         visuals = model.get_current_visuals()  # get image results
         img_path = model.get_image_paths()     # get image paths
         if i % 5 == 0:  # save images to an HTML file
             print('processing (%04d)-th image... %s' % (i, img_path))
-        print("img_path: ", img_path)
         save_images(webpage, visuals, img_path, width=opt.display_winsize)
-    webpage.save()  # save the HTML
+
+        short_path = ntpath.basename(img_path[0])
+        name = os.path.splitext(short_path)[0]
+        if not os.path.exists(os.path.join(opt.dataroot, 'fakeB')):
+            os.makedirs(os.path.join(opt.dataroot, 'fakeB'))
+
+        for label, im_data in visuals.items():
+            if label == 'fake_B':
+                im = util.tensor2im(im_data)
+                util.save_image(im, os.path.join(opt.dataroot, 'fakeB', name + ".png"), aspect_ratio=1.0)

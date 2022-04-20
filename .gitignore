@@ -1,5 +1,8 @@
 # dataset
 contrastive-unpaired-translation/datasets/pouring/
+Segment_Transparent_Objects/demo/
+data/
+logs/
 
 # images
 *.jpg

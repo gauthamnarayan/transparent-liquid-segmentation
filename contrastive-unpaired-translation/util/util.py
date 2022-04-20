@@ -88,7 +88,7 @@ def save_image(image_numpy, image_path, aspect_ratio=1.0):
         image_numpy (numpy array) -- input numpy array
         image_path (str)          -- the path of the image
     """
-    print("image_path: ", image_path)
+
     image_pil = Image.fromarray(image_numpy)
     h, w, _ = image_numpy.shape
 
