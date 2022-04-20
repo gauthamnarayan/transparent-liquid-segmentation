@@ -7,7 +7,7 @@ logs/
 # images
 *.jpg
 *.png
-*.gif
+
 
 # misc
 *.tex
