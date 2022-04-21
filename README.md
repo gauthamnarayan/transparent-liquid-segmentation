@@ -74,8 +74,6 @@ cp -r pouring_training_videos pouring_testset_videos data/datasets
 We do not expect our pre-trained models to generalize beyond our lab due to the complex lighting conditions involved; Our training procedure is easy to use and self-supervised so it would be best to retrain the image translation and segmentation models with data collected on site.
 
 ## Cup segmentation
-TODO: Automate for every video
-
 Run once for each video of opaque and colored liquids
 
 ```
