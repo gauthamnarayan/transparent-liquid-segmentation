@@ -177,3 +177,5 @@ year={2022}}
 # Acknowledgement
 
 This material is based upon work supported by LG Electronics and National Science Foundation under Grant No. IIS-2046491.
+
+For image translation, we build on top of [Contrastive Unpaired Translation](https://github.com/taesungp/contrastive-unpaired-translation) and thank the authors, Taesung Park, Alexei A. Efros, Richard Zhang and Jun-Yan Zhu.
