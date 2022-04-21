@@ -78,9 +78,7 @@ Run once for each video of opaque and colored liquids
 
 ```
 cd Segment_Transparent_Objects/
-
 python -u ./tools/test_demo.py --config-file configs/trans10K/translab.yaml TEST.TEST_MODEL_PATH ./demo/16.pth  DEMO_DIR ../data/datasets/pouring_training_videos/opaque/video_<id>
-
 python -u ./tools/test_demo.py --config-file configs/trans10K/translab.yaml TEST.TEST_MODEL_PATH ./demo/16.pth  DEMO_DIR ../data/datasets/pouring_training_videos/transparent/video_<id>
 ```
 
@@ -125,7 +123,7 @@ python test.py --dataroot ../data/datasets/pouring_dataset \
                --preprocess none
 ```
 
-###Pouring video dataset directory structure:
+### Pouring video dataset directory structure:
 
 ```trainA```: Opaque (green) liquid
 
@@ -149,7 +147,6 @@ pouring_dataset
 To train the segmentation model (UNet), please use the following command.
 ```
 cd ../scripts
-
 python train_unet_transparent_pouring.py --train-data-dir ../data/datasets/pouring_dataset --save-dir ../data/saved_models
 ```
 
