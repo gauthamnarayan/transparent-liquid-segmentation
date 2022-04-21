@@ -3,7 +3,7 @@ import torch
 import numpy as np
 from torch import distributed as dist
 import copy
-from IPython import embed
+# from IPython import embed
 
 __all__ = ['SegmentationMetric', 'batch_pix_accuracy', 'batch_intersection_union',
            'pixelAccuracy', 'intersectionAndUnion', 'hist_info', 'compute_score']

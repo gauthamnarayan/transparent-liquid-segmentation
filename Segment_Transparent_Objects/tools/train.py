@@ -26,7 +26,7 @@ from segmentron.utils.options import parse_args
 from segmentron.utils.default_setup import default_setup
 from segmentron.utils.visualize import show_flops_params
 from segmentron.config import cfg
-from IPython import embed
+# from IPython import embed
 
 class Trainer(object):
     def __init__(self, args):

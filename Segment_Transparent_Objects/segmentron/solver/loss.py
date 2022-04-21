@@ -9,7 +9,7 @@ from .lovasz_losses import lovasz_softmax
 from ..data.dataloader import datasets
 from ..config import cfg
 
-from IPython import embed
+# from IPython import embed
 
 __all__ = ['get_segmentation_loss']
 
