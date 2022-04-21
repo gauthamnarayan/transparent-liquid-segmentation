@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from collections import OrderedDict
 from .basic import _ConvBNReLU, SeparableConv2d, _ConvBN, _BNPReLU, _ConvBNPReLU
 from ..config import cfg
-from IPython import embed
+# from IPython import embed
 
 __all__ = ['_FCNHead', '_ASPP', 'PyramidPooling', 'PAM_Module', 'CAM_Module', 'EESP']
 

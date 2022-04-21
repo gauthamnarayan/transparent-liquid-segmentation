@@ -21,7 +21,7 @@ from segmentron.utils.distributed import synchronize, make_data_sampler, make_ba
 from segmentron.config import cfg
 from segmentron.utils.options import parse_args
 from segmentron.utils.default_setup import default_setup
-from IPython import embed
+# from IPython import embed
 from collections import OrderedDict
 from segmentron.utils.filesystem import makedirs
 import cv2

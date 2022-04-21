@@ -6,7 +6,7 @@ from .segbase import SegBaseModel
 from .model_zoo import MODEL_REGISTRY
 from ..modules import _ConvBNReLU, SeparableConv2d, _ASPP, _FCNHead
 from ..config import cfg
-from IPython import embed
+# from IPython import embed
 import math
 
 __all__ = ['TransLab']

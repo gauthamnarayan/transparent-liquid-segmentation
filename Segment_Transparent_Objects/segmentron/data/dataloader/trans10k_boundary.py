@@ -6,7 +6,7 @@ import logging
 
 from PIL import Image
 from .seg_data_base import SegmentationDataset
-from IPython import embed
+# from IPython import embed
 import cv2
 
 class TransSegmentationBoundary(SegmentationDataset):
