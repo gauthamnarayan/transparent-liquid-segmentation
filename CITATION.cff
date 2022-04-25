@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it as below."
+authors:
+- family-names: "Narasimhan"
+  given-names: "Gautham Narayan"
+  orcid: "https://orcid.org/0000-0001-6180-633X"
+- family-names: "Zhang"
+  given-names: "Kai"
+- family-names: "Eisner"
+  given-names: "Ben"
+- family-names: "Lin"
+  given-names: "Xingyu"
+- family-names: "Held"
+  given-names: "David"
+  orcid: "https://orcid.org/0000-0003-0537-1508"
+title: "Self-supervised Transparent Liquid Segmentation for Robotic Pouring"
+version: 2.0.4
+doi: 	arXiv:2203.01538
+date-released: 2022-03-03
+url: "https://github.com/github/linguist"
+preferred-citation:
+  type: article
+  doi: arXiv:2203.01538
+  title: "Self-supervised Transparent Liquid Segmentation for Robotic Pouring"
+  booktitle: "International Conference on Robotics and Automation (ICRA)"
+  year: 2022
+  authors:
+  - family-names: "Narasimhan"
+    given-names: "Gautham Narayan"
+    orcid: "https://orcid.org/0000-0001-6180-633X"
+  - family-names: "Zhang"
+    given-names: "Kai"
+  - family-names: "Eisner"
+    given-names: "Ben"
+  - family-names: "Lin"
+    given-names: "Xingyu"
+  - family-names: "Held"
+    given-names: "David"
+    orcid: "https://orcid.org/0000-0003-0537-1508"
+
+
